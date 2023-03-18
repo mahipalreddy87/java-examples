@@ -8,10 +8,10 @@ public class Palindrome {
     }
 
     private static boolean palindrome(String s) {
-        int len = s.length();
+        int len = s.length()-1;
         boolean flag=true;
         for (int i = 0; i < len / 2; i++) {
-            if(s.charAt(i)!=s.charAt(len-i-1)){
+            if(s.charAt(i)!=s.charAt(len-i)){
                 flag =false;
                 break;
             }

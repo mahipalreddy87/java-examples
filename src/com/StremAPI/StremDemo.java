@@ -110,6 +110,7 @@ public class StremDemo {
         Map<String, Double> averageAgeOfMaleAndFemaleEmployee = employeeList.stream()
                 .collect(Collectors.groupingBy(Employee::getGender, Collectors.averagingInt(Employee::getAge)));
         System.out.println(averageAgeOfMaleAndFemaleEmployee);
+
     }
 
     public static void method4() {

@@ -28,7 +28,7 @@ public class StreamDemo1 {
         List<User> l1 = userList.stream().sorted(Comparator.comparing(User::getName)).collect(Collectors.toList());
         l1.stream().forEach(System.out::println);
 
-        //compare by ort by age, if age is same then sort by name
+        //compare by sort by age, if age is same then sort by name
         List<User> sortedList = userList.stream().sorted((o1, o2) -> {
             if (o1.getAge() == o2.getAge())
                 return o1.getName().compareTo(o2.getName());

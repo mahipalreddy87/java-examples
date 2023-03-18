@@ -1,5 +1,7 @@
 package com.functionalinterface;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -27,6 +29,9 @@ public class FunctioninterfaceDemo {
         Supplier<Double> retrunDouble = ()->Math.random();
         System.out.println(retrunDouble.get());
 
+        Supplier<List<Person>> listSupplier =()->List.of(new Person("mahipal"),new Person("reddy"));
+
+
     }
 }
 class Person{
@@ -38,5 +43,11 @@ class Person{
 
     public void setName(String name) {
         this.name = name;
+    }
+    public Person(){
+
+    }
+    public Person(String name){
+        this.name =name;
     }
 }
