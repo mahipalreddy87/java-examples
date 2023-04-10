@@ -13,7 +13,7 @@ public class HashmapExample {
         // same state
         Geek g1 = new Geek("aditya", 1);
         Geek g2 = new Geek("aditya1", 1);
-        Geek g3 = new Geek("aditya1", 1);
+        Geek g3 = new Geek("aditya1", 2);
 
         Map<Geek, String> map = new HashMap();
 

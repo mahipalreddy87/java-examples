@@ -2,6 +2,7 @@ package com.StremAPI;
 
 import java.util.*;
 import java.util.List.*;
+import java.util.concurrent.ExecutorService;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -25,7 +26,7 @@ public class StreamDemo1 {
                 new User("Brandon", 42)));
 
         // compare by name
-        List<User> l1 = userList.stream().sorted(Comparator.comparing(User::getName)).collect(Collectors.toList());
+        List<User> l1 = userList.stream().sorted(Comparator.comparing(e->e.getName())).collect(Collectors.toList());
         l1.stream().forEach(System.out::println);
 
         //compare by sort by age, if age is same then sort by name
