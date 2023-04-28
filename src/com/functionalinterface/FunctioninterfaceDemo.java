@@ -17,8 +17,8 @@ public class FunctioninterfaceDemo {
 
         //consumer -- modify the data , no output
         Person p = new Person();
-        Consumer<Person> setName = t->t.setName("raju");
-        setName.accept(p);
+        Consumer<Person> name = t->t.setName("raju");
+        name.accept(p);
         System.out.println(p.getName());
 
         //Function both input and output

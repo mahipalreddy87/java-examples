@@ -10,6 +10,7 @@ class GroupAnagramStrings {
         // expected [[cat, tac, act], [dog, god]]
         String wordArr[] = {"cat", "dog", "tac", "god", "act"};
         System.out.println(groupAnagrams(wordArr));
+
     }
 
     public static List<List<String>> groupAnagrams(String[] strs) {

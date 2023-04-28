@@ -8,6 +8,7 @@ import java.util.stream.Stream;
 
 public class StreamDemo1 {
     public static void main(String[] args) {
+
         // sort based on order
         //Stream.of(1, 3, 2, 4, 5, 6, 3, 49, 10).sorted().forEach(System.out::println);
 
@@ -17,9 +18,25 @@ public class StreamDemo1 {
         //skip the initial element
         Stream.of(1, 3, 2, 4, 5, 6, 3, 49, 10).skip(1).forEach(System.out::println);
 
+
+        // max and min
+
+        List<Product> productList = new ArrayList<Product>();
+
+        // Adding Products
+        productList.add(new Product(1, "Sony mobile", 25000));
+        productList.add(new Product(2, "Lenovo mobile", 15000));
+        productList.add(new Product(3, "Nokia mobile", 10000));
+        productList.add(new Product(4, "Samsung mobile", 40000));
+
+        // 1  // max() method to get max Product price
+        System.out.println(productList.stream().max(Comparator.comparingDouble(p->p.getPrice())));
+
+
+
         // comparing objects
 
-        List<User> userList = new ArrayList<>(Arrays.asList(
+        List<User> userList = new ArrayList(Arrays.asList(
                 new User("John", 33),
                 new User("Robert", 26),
                 new User("Mark", 26),
