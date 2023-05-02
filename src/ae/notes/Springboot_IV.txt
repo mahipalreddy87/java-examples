@@ -1,0 +1,286 @@
+1. how you will send status code 404 if you are getting some exception.
+
+global exceptions handled using below classes.
+write one new controller class and anotate with @restcontorlleradvise
+
+	@controllerAdvise -- anotate the class
+	@ExceptionHandler--anotate the method
+
+2. What is API gateway in Spring Boot?
+
+	> Spring Cloud Gateway provides a library to build an API Gateway. 
+	  This is the preferred gateway implementation provided by Spring Cloud. 
+
+3> What is a circuit breaker in microservices?
+	You will build a microservice application that uses the Circuit Breaker pattern to gracefully degrade functionality when a method call fails.
+ 	Use of the Circuit Breaker pattern can allow a microservice to continue operating when a related service fails,
+	 preventing the failure from cascading and giving the failing service time to recover.
+
+4. How does Spring Boot implement Hystrix?
+
+	Hystrix is a library under spring cloud which component of Spring boot. Hystrix is a library from Netflix, 
+	we use that library in pom.xml or build.gradle file. It is spring cloud starter library. spring-cloud-starter-hystrix we use this libraray, 
+	its is a latency and fault tolerance library. It stops cascading failure and enable resilience in distributed systems.
+
+	It has below two features.
+	
+	Fallback method
+	Circuit breaker
+
+5. distributed logging in microservices spring boot?
+	spring cloud sleuth-> library helps to add trace ids.
+	What is Zipkin in Spring Boot-> Zipkin is an application that monitors and manages the Spring Cloud Sleuth logs of your Spring Boot application.
+				 To build a Zipkin server,we need to add the Zipkin UI and Zipkin Server dependencies in our build configuration file.
+
+6. sprinboot advantages
+	-> Auto configuration 
+	-> embded server
+	-> RAD for standlone application developement.
+	->It reduces lots of development time and increases productivity. 
+
+7. can we replace embaded tomcat server ??
+	yes, we can replace the server with jetty server.
+
+	like below
+	<dependency>
+    		<groupId>org.springframework.boot</groupId>
+    		<artifactId>spring-boot-starter-web</artifactId>
+    	<exclusions>
+      	  <exclusion>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+        </exclusion>
+    </exclusions>
+	</dependency>
+		<dependency>
+  		  <groupId>org.springframework.boot</groupId>
+  		  <artifactId>spring-boot-starter-jetty</artifactId>
+		</dependency> 
+8. can we remove embaded tomcat server?
+	yes , not include web dependency
+		or override below code in application.properties
+		   spring.main.web-application-type=none
+
+9. how to disable auto configuration specific class?
+
+	@Autoconfiguration(exclude=(Datasource.class))
+
+10.what does @springbootApplication anotation do?
+
+	this annotaion is equal to 3 annoation-> @ configuration
+						@Autoconfiguration
+						@ComponentScan
+	spring enables single annotaion rather using 3 annotaions.spring is loosly coupled
+	if required we can ovveride the this annotaions.
+
+11. How to use prperty defined application.property file in java class.
+	in class above use this annotaion.
+
+	@Value("${sever.port}")
+	private String serverPort;
+
+12. explain @RestController annotation 
+
+	is a convience annotaion for Restfull controllers, it is specialization of @component detection in class path.
+	it add the @Controller and @ResponseBody annotaions.it convert the resposne to json or xml.
+
+	-> it avoids to write @ResposneBody annotaion for each method/ service.
+	-> it indicated each method returned resposne into @Responsebody.
+
+13. @Controller vs @RestController
+
+	@Controller is used to mark classes as Spring MVC Controller.
+		can be used for webapplication(HTML+CSS+Javscript)
+
+	@RestController annotation is a special controller used in RESTful Web services, 
+	 and it's the combination of @Controller and @ResponseBody annotation.
+		@used for REST API development because convert resposne to JSOn/ XML and puhed HTTP resposne body.
+
+
+14. cmd for run springboot jar
+  java -jar /path/jarname
+
+15. springboot over spring advantages
+	-> Spring Boot Auto-configuration automatically configures the Spring application based on the jar dependencies that we have added.
+	--> Spring Boot Framework is widely used to develop REST APIs.
+	--> It helps to create a stand-alone application with less configuration.
+	--> Spring Boot offers embedded server such as Jetty and Tomcat, etc.
+	--> It offers several plugins for working with an embedded and in-memory database such as H2.
+
+16. what is the use profiles in springboot ?
+
+	the main use case for profiles in Spring Boot is to group configuration parameters for different environments into different application
+
+17. 5 exceptions generally encounter in springbot?
+	-> NosuchbeandefinationException--> occurs when no bean defination for component (means no annotaion but try to inject another class with @autowire)
+	->NonUniqueBeanDefinationException--> 2 classes implement same interface, when we are tying to autowire interface tis issue will come.
+	--> BeanCreationException -> when 2 beans are injecting each other.
+	--> 
+
+18. spring annotaions used in your project?
+
+	@SpringBootApplication -(@Componentscan+@EnableAutoconfiguration+@Configuration)
+	@AutoWire  -- way to inject dependency injection
+	@Component -- container identity as bean and startup will create bean
+	@Controller -- web request handler, serve web pages.
+	@RestController - REST API developement, serve http resposne as json format.
+	
+19. @Transactional and @EnableTransactionMangement 
+	
+is used to maintain data consistency.
+any repository commits fail then whole transaction will fail and data will not store in tables.
+
+	@EnableTransactionMangement --> add in main class
+	@Transactional  ->> add in service class
+
+20. spring security?
+	spring 3.0 introduced classs UserDetailsService extends our class and username and pwd details to rescrict the service urls.
+	annotation:
+	-add in config service call
+	@enablewebsecurity
+	@enableMethodsecurity
+
+	--add in controller
+	 @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+
+21. how your application generate jar or war file?
+
+by defing below tag in pom.xml
+
+<packaging>war</packaging>
+or 
+<packaging>jar</packaging>
+
+22. how rest service apply more secure?
+
+23. attach and detach?
+
+24. spring 
+
+25 sql injection?
+
+SQL injection is one of the most common web hacking techniques.
+SQL injection is the placement of malicious code in SQL statements, via web page input.
+
+26. Interceptor With Spring Boot ?
+							intercept
+	we can intercept the request from client<------------------>controller
+we can add request header or resposne header to controller
+methods:
+prehandle() --> before sending to controller this will execute
+posthandle()  --> after controller retun to reponse time.
+afterhandle()
+
+------------------Apache kafka---------------------------------------------
+
+21. write config file for kafka configuration
+	@Configuration
+	@EnableKafka
+	public class SpringKafkaConfig{
+		define beans
+		@Bean
+		ProducerFactory
+		@Bean
+		KafkaTemplate(ProducerFactory)
+
+		@Bean
+		ConsumerFactory
+		@Bean
+		ConcurrentKafkaListenerContainerFactoryConsumerFactory
+	
+
+	}
+	--> write producer class and add endpoint (producer sent data to kafka)
+			kafkaTemplate.send(ApplicationConstant.TOPIC_NAME, message);
+
+	--> write consumer class add method
+		
+	@KafkaListener(groupId = ApplicationConstant.GROUP_ID_JSON, topics = ApplicationConstant.TOPIC_NAME, containerFactory = ApplicationConstant.KAFKA_LISTENER_CONTAINER_FACTORY)
+	public void receivedMessage(Student message) throws JsonProcessingException {
+		ObjectMapper mapper = new ObjectMapper();
+		String jsonString = mapper.writeValueAsString(message);
+		logger.info("Json message received using Kafka listener " + jsonString);
+	}
+
+
+22.MongoDB
+
+	add annotation in main class @EnableMongoRepositories
+	extends MongoRepository in repository class
+	create bean 
+	@Autowired
+	MongoTemplate
+
+	queries use
+	mongoTemplate.findAll()
+
+	Query query = new Query();
+        query.addCriteria(Criteria.where("firstName").is(firstName));
+        return new ArrayList<>(mongoTemplate.find(query, Employee.class));
+
+
+23. OAuth in springboot?
+
+
+
+24. spring batch?
+
+	add spring web, spring batch, JPA dependecy
+	batc processing - huge amount data process with minimal human support
+
+	> add config file @EnableBatchProcessing	
+
+		Job launcher<==JobBuilderFactory <==StepBuilderFactory <= item reader, item writer, item processor
+
+25. spring scopes?
+
+singleton(default) - only one instance of the spring bean will be created for the spring container. ...
+prototype – A new instance will be created every time the bean is requested from the spring container.
+request – This is same as prototype scope, however it's meant to be used for web applications.
+session
+globalsession
+ 
+eg:
+
+@Scope(value = ConfigurableBeanFactory. SCOPE_PROTOTYPE)
+
+we can change the scope of te bean by using scope 
+		
+
+=========Spring security==========================
+
+ways:
+1. implement ssl in API leveland make urls as Https. (apply Https URLs)
+
+ add ssl  config
+server.port=8443
+server.ssl.key-store-type=PKCS12
+server.ssl.key-store=classpath:keystore.p12
+server.ssl.key-store-password=password
+server.ssl.key-alias=myalias
+
+2. springboot security dependecy and add basic autentication
+
+eg basic autinetication(using defualt springboot)
+	> add security dependency in the project
+	> add @Enablewebsecurity in main class
+
+	add property in app.properties
+		>spring.secuirity.username = admin
+		>spring.secuirity.password = admin
+
+ > role based and url based custom security
+
+3. Oauth or JWT token based authentication
+	authoraiztion token
+	access token
+
+	
+
+	
+
+
+
+====================================================
+	
+

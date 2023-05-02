@@ -1,0 +1,70 @@
+Design Patterns of Microservices
+https://www.edureka.co/blog/microservices-design-patterns
+
+Aggregator
+API Gateway
+Chained or Chain of Responsibility
+Asynchronous Messaging
+Database or Shared Data
+Event Sourcing
+Branch
+Command Query Responsibility Segregator
+Circuit Breaker
+Decomposition
+
+-------------------Aggregator design pattern-----------------------------
+
+aggregate the multiple services result send it to client
+ou can abstract the logic into a composite microservices and aggregate that particular business logic into one service.
+
+
+
+		-------> MS1
+Aggregator ==>	-------> MS2
+		-------> MS3		
+
+
+---------------saga design pattern----------------------------------------
+solove the problem of distributed transaction managament
+
+Why SAGA ??
+We know that Design pattern gives solutions to common problems faced by us “THE DEVELOPERS”. So What problem is solved by this SAGA design pattern ?
+
+The problem started as soon as we moved from Monolithic application to Microservice Architecture. 
+
+We will take example of Swiggy , zomato.
+You 
+Choose your dishes,
+Add them to Cart and checkout
+Make Payment 
+Order gets Delivered
+Our order is marked as completed after delivery is successful.
+
+Now we moved to microservices architecture and Segregated the whole zomato or swiggy application to
+Order service 
+Payment service
+Delivery Service
+
+if any microservice fails it will revert the eralier <== involved microservices transactions.
+
+1. What Is Saga Architecture Pattern?
+ The Saga architecture pattern provides transaction management using a sequence of local transactions.
+
+2. Ways to Implement SAGA?
+	There are two type of saga implementation ways
+	choreography
+	orchestration
+
+3. What is Choreography Saga Pattern?
+
+	Choreography is a way to coordinate sagas where participants exchange events without a centralized point of control
+4.What is Orchestration Saga Pattern?
+
+Orchestration is a way to coordinate sagas where a centralized controller tells the saga participants what local transactions to execute.
+
+
+---------------Strategy Design Pattern -------------------------------------
+
+> behaviour design pattern
+>Strategy design pattern is one of the behavioral design pattern. Strategy pattern is used when we have multiple algorithm
+   for a specific task and client decides the actual implementation to be used at runtime.

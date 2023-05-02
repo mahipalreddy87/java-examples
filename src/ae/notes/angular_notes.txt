@@ -1,0 +1,438 @@
+ 
+create project:
+
+ng new app_name  
+
+commands----
+ng serve( to deploy the project)
+ng biuld --prod(to build the project)
+ng add @angular/materail
+
+required softwares
+
+Node
+NPM
+Angular CLI
+
+Text Editor-VS code
+
+
+
+---------------------------------------------Angular 8------------------------------------------------------------------------------------------
+
+1. why angular??
+
+-> is use to build client side applications.
+-> great chioce for single page applications, because pages are refresh asychronously
+-> angular follow modular approach, hence follow clear structure.
+-> reusable code
+-> inbuild capabilities like routing and validations. which makes easy to develop and maintain
+-> uint testable.
+-> type script.
+
+ version 1-- 2010, angulajs
+ version 2 -2016 angular
+angular 5 -2017 
+
+current project angular 8
+
+2. components?
+
+-> Template (HTML, view)
+-> class ( code, type script, data & methods)
+-> Metadata( information, decorator)
+
+2. add new component
+	ng g c 
+
+
+-------java script----------------------------------------------------------------------------------------------------------
+
+String.
+Number.
+Bigint.
+Boolean.
+Undefined.
+Null.
+Symbol.
+Object. --> // Object:
+const person = {firstName:"John", lastName:"Doe"};
+
+const t ="mahipal";  --> we can not re assign the value
+let t= "mahipal";
+let t1 =20;
+var t ="mahipal"
+
+restrict type:
+let t:String ="abc";
+
+we can add any data type: Union 
+
+let t:any ="abc";
+t=5;
+
+functions:
+
+// Function to compute the product of p1 and p2
+function myFunction(p1, p2) {
+  return p1 * p2;
+}
+
+Events: 
+HTML events are "things" that happen to HTML elements.
+onchange	An HTML element has been changed
+onclick	The user clicks an HTML element
+onmouseover	The user moves the mouse over an HTML element
+onmouseout	The user moves the mouse away from an HTML element
+onkeydown	The user pushes a keyboard key
+onload	The browser has finished loading the page
+
+Interpolation:
+${...}
+
+eg:
+let price = 10;
+let VAT = 0.25;
+
+let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+
+---------String methods:
+
+String length
+String slice()
+String substring()
+String substr()
+String replace()
+String replaceAll()
+String toUpperCase()
+String toLowerCase()
+String concat()
+String trim()
+String trimStart()
+String trimEnd()
+String padStart()
+String padEnd()
+String charAt()
+String charCodeAt()
+String split()
+
+---------Number methods:
+
+toString()	Returns a number as a string
+toExponential()	Returns a number written in exponential notation
+toFixed()	Returns a number written with a number of decimals
+toPrecision()	Returns a number written with a specified length
+ValueOf()	Returns a number as a number
+
+------JavaScript Arrays:
+
+const cars = ["Saab", "Volvo", "BMW"];
+methods:
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.push("Kiwi");
+fruits.pop();
+fruits.sort();
+fruits.reverse();
+
+iteration:
+fruits.forEach(myFunction);
+
+The filter():
+ method creates a new array with array elements that pass a test.
+
+eg: const numbers = [45, 4, 9, 16, 25];
+const over18 = numbers.filter(myFunction);
+function myFunction(value, index, array) {
+  return value > 18;
+}
+
+Array map():
+
+The map() method creates a new array by performing a function on each array element.
+const numbers2 = numbers1.map(myFunction);
+
+-------Date--------------------
+const d = new Date();
+
+----- Math Object----------------
+
+let a =Math.round(4.6);
+Math.random();
+
+----------If condition-------------
+
+if (condition) {
+  //  block of code to be executed if the condition is true
+}
+
+eg:  if (hour < 18) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+}
+
+--------- for loop ------------------------
+
+const cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+
+let text = "";
+for (let i = 0; i < cars.length; i++) {
+  text += cars[i] + "<br>";
+}
+
+
+--for in
+let text = "";
+for (let x in cars ){
+  text += cars[i] + "<br>";
+}
+
+
+---Array.forEach()
+
+const numbers = [45, 4, 9, 16, 25];
+
+let txt = "";
+numbers.forEach(myFunction);
+
+function myFunction(value, index, array) {
+  txt += value;
+}
+
+----While Loop
+
+while (i < 10) {
+  text += "The number is " + i;
+  i++;
+}
+
+The break statement "jumps out" of a loop.
+
+The continue statement "jumps over" one iteration in the loop.
+
+
+----------JavaScript Sets------------------------------------------
+
+
+const letters = new Set(["a","b","c"]);
+letters.add("a");
+delete()
+
+
+--- arrow function
+
+let myFunction = (a, b) => a * b;
+document.getElementById("demo").innerHTML = myFunction(4, 5);
+
+
+
+------------------JavaScript Classes-------------------------------------
+Use the keyword class to create a class.
+
+Always add a method named constructor():
+When you have a class, you can use the class to create objects:
+
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+}
+
+
+let myCar1 = new Car("Ford", 2014);
+
+
+questions and answers.
+------------------------------------------------------------------------------------------------------------------------------------
+Question 1  :- What the use of Angular ?
+	angular is a binding framework which helps to bind the HTML UI with java script model.
+	it helps to build SPA(single page application) with help of routing anf feautures like Http, DI(dependecy injection).
+
+Question 2  :- Differentiate between AngularJS vs Angular ?
+
+		`angularjs   (1.x..)                                    angular(2,3,.....14)
+
+language		java script						type script(compiles to java script)
+architecutre	 	Controller						component
+Mobile complient  	No							yes
+CLI``			No							yes
+lazy loading		No							yes
+server side		No							yes
+
+Question 3 :-  What are directives in Angular ?
+	directives are angular syntaxes and we can use in html, will help and attch behaviour with HTML.
+
+Question 4 :- Explain the different types of Angular directives ?
+	3 kinds of directives. (SAC)
+	
+	1. structural directvies--> will helps to change the stucture of HTML dom element.
+		eg: ngfor, ngif,....
+	2. attribute directives--> change the appearance and behaviour of html elements.(change look and feel)
+		eg: hidden, ngClass , ngStyle , and ngModel
+	3. component directive---> its like use control with user own template(own code)
+	
+
+	
+Question 5  :- Explain the importance of NPM and Node_Modules folder ?
+	
+	NPM-> node package manager- helps you to implement any java script framework libraries.
+
+	Node_Modules -> is the folder where installed all libraries.
+		
+	eg: npm install jquery then it will install jquery from NPM and placed in node_modles.
+
+Question 6 :- Explain the importance of Package.json file in Angular ?
+
+	what ever java script frameworks we are using in project all listed in package.json.
+
+Question 7 :- What is typescript and why do we need it ?
+	->type script is superset of java script, it added types to js (add variable to mention type like number)
+	-> java script is a prototype function programiing language
+		but type script provieds nice OOP programing environment (we can create class)( finally converts to JS) 
+		it will helps developement fast
+
+Question 8 :- Explain importance of Angular CLI ?
+	provide ready made project template to kick start the application.
+
+Question 9 :- Explain the importance of Component and Modules ?
+	component-> is place to write the binding the code between model and view.
+	module -> group of components.
+	
+	view(html)----> component--------> model ( responsible to map application data)
+
+Question 10 :- What is a decorator in Angular ?
+	-> decorator defines what kind of class is it (inform kind of class to angular)
+	class decorators:
+	@comoponet -> it say as angular component
+	@NgModule  -> it say as angular maodule.
+	property decorators: 
+	Imagine we have a property in our class that we want to be an InputBinding.
+	@Input() 
+	
+	@Component({
+			selector: 'app-root',
+			templateUrl: './app.component.html',
+			styleUrls: ['./app.component.scss']
+		})
+	
+	
+Question 11 :- What are Annotationa or MetaData ?
+meta data or annotaions are same decorator.
+
+Question 12 :- What is a template ?
+	template is HTML view of angular in which we can write deirectives.
+	we can define in 2 ways , wite html code in same type script file. and write one more html file.
+	templateUrl: './app.component.html',
+
+	or : template: "<b>test</b>",
+
+
+Question 13 :- Explain the four types of Data bindings in Angular ?
+
+	data binding menas, how controller and view communicate each other.
+	there are 4 ways.
+	1. expression or interpolation --> data flow from controllet to view  and access it in html {{}}  -oneway from controller to view
+	2. property binding ->  In property binding, we bind a property of a DOM element to a field which is a defined property in our component TypeScript code. 
+				Actually, Angular internally converts string interpolation into property binding.  eg: []
+				<element [property]= 'typescript_property'>
+	3. event binding : bind the data from html to comonent html--> comonent  eg ()
+		(click)
+	4. two way binding : from html<--> component
+
+Question 14 :- Explain architecture of Angular ?
+
+	directives	
+		||
+	(template)<-------------------->(component1).2.3...etc ==> (module)
+	  html		(binding)
+	
+	(service)--> helps to share the common logic and inject in componets (depenedecy injection)
+
+
+
+	template: the HTML view of angular
+	component: Binds the view and model
+	modules: gropu components logically
+	Bindings : define how view and component communicate
+	Directives: Changes the HTML DOM behaviour angular syntaxes
+	Services: helps to share the common logic and inject in componets
+	DI--> dependency injection helps to inject instances across constructors.
+
+Question 15 :- What is SPA in Angular ?
+	Single page applications are applications where main UI loaded once and then needed UI loaded on demand.
+
+Question 16 :- How to implement SPA in Angular ?
+	by using Angular routing we can implement SPA.
+	
+Question 17 :- How to implement routing in Angular ?
+	routing is simple collection, in which contain 2 things, it will helps to navigate the application 
+	if you want to move one screen to another required routing.
+	1. URL
+	2. when this URL and which componet load
+{ path:  'contacts', component:  ContactListComponent}
+
+html added tags:
+<router link>
+
+<router outlet>-> navigation page
+
+	
+Question 18 :- Explain Lazy Loading ? 
+	lazy loading menas on demand loading, loading only necessary Html, js, and css files so that you better perfomance
+Question 19 :- How to implement Lazy Loading in Angular ?
+	> devide your project into modules.
+	>use loadchildren to load the modules.
+	
+Question 20 :- Define Services ?
+	 helps to share the common logic and inject in componets or modlues.
+
+Question 21 :- What is Depedency Injection ?
+	 is a design pattern , where rather than creating instances with in component, angular inject via constructor.
+Question 22:- How to implement Depedency Injection ?
+	2 things need to do.
+	1. module.ts -> need to define providers[{"provides:baselogger,useclass:httplogger}]	httplogger insctance will inject to baselogger
+	2. component constructor add the object constructor(public l:baselogger)
+
+Question 23 :- Whats the benefit of Depedency Injection ?
+	loosly coupled, maintance of the project is easy
+
+Question 24 :- Differentiate between ng Serve and ng build ?
+	ng serve builds inmemory, where ng build builds harddisk when we want go for production use ng build.
+Question 25 :- Explain the --prod parameter in ng build ?
+	this will compress the js file, and removes comments and ready for production.
+
+26. parent child components?
+	we can can keep child component inside parent component.
+	add the child selector in parent HTML
+
+27.life cycle hooks in angular?
+	A componnet from creation to destruction goes several statges, these stages are life cycle hooks.
+	
+	stages:
+	1. componnet instantion
+	2. rendering component html view
+	3. creating the child components
+	4. destroying the component
+	
+hooks:
+	ngOnChanges − When the value of a data bound property changes, then this method is called.
+
+	ngOnInit − This is called whenever the initialization of the directive/component after Angular first displays the data-bound properties happens.
+
+	ngDoCheck − This is for the detection and to act on changes that Angular can't or won't detect on its own.
+
+	below are required for child components
+		ngAfterContentInit − This is called in response after Angular projects external content into the component's view.
+
+		ngAfterContentChecked − This is called in response after Angular checks the content projected into the component.
+
+		ngAfterViewInit − This is called in response after Angular initializes the component's views and child views.
+
+		ngAfterViewChecked − This is called in response after Angular checks the component's views and child views.
+
+	ngOnDestroy − This is the cleanup phase just before Angular destroys the directive/component.
+
+28. What is injectable () in Angular?
+The @Injectable() decorator defines a class as a service in Angular and allows Angular to inject it into a component as a dependency. 

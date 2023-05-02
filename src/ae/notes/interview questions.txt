@@ -1,0 +1,280 @@
+1. SOLID Principles Java
+
+a.Single Responsibility Principle (SRP) 
+--> every Java class must perform a single functionality.
+   Implementation of multiple functionalities in a single class mashup the code and if any modification is required may affect the whole class.
+
+b. Open-Closed Principle (OCP) -> the module should be open for extension but closed for modification.
+c. Liskov Substitution Principle (LSP)--It applies to inheritance in such a way that the derived classes must be completely substitutable for their base classes.
+d .Interface Segregation Principle (ISP)-- using interface acheive abstraction
+e -Dependency Inversion Principle (DIP) --in class we can declare interface and inject implemented classe.
+
+
+
+2. difference between hashtable vs concurrenthashmap
+  --> Concurrent hash map applies locks only at bucket level called fragment while adding or updating the map. 
+	So, a concurrent hash map allows concurrent read and write operations to the map
+
+6. How To Avoid Deadlock
+	-> Avoid Nested Locks:
+	-> Avoid Unnecessary Locks:
+	-> Using Thread.join(): A deadlock condition 
+
+6. why java is not 100% ooo languange?
+
+	because of premitive data types.(int, long, float,..)
+	to make them OO we need to wrap the premitives to objects using wrapper classes.
+
+7. why pointers are not used in java?
+	-> because of security issues and this are unsafe.
+	-> JVM is responsible for implicit memory allocation, inorder direct access to the users.
+	-> if you want we can implement explicitly like( linkedlist)
+
+8. why string is immutable?
+	--> string pool is immutable because shared references can be changed anywhere.
+	--> security concern,network, dbconnection, file system.
+
+9. marker interface?
+
+	-> no methods in interface.
+	eg: serializable, cloneable
+	used because to inform compiler to mark.
+
+10. can we ovveride static and private methods?
+
+	No, we can not ovrride.
+
+	-> private methods are not acceble to child class
+	-> static methods with same signature then parent class will hide hence, this is method hiding. 
+
+11. does finally method executes always?
+  	not in following cases.
+	-> System.exit() function.
+	-> system crash.
+
+12. object class methods?
+	clone(), notify(), notifyALL,wait(),finalize(),getclass, tostring(), hashcode()
+
+13. how can you make an immutable class?
+	-define class as final
+	-define variables as private
+	- dont add getters and setters
+	- make all fields as final
+
+14. how to make class as singleton?
+	
+	private object =null;
+	private constuctor.
+	and static method will create 1 object.
+
+	public Object getInstance(){
+	   if(instance==null) object = new Oject();
+		return object;
+
+	}
+
+15. types of design patterns?
+	-> creational design pattern(object)--- factory, abstarct factory, singleton, prototype, builder
+	-> behavioural design pattern
+	-> structural design pattern
+	-> J2EE pattern
+
+16. java 17 features?
+
+	-> sealed classes -> restrict inhertance classes.
+
+		public sealed interface vehicle permits car,jeep{
+		}
+	--> Java 17 delivers thousands of performance, stability, and security updates,
+	--> Parallel Garbage Collector (multiple threads used as collectors)
+		
+
+
+
+7. stream vs parlell stream
+	-> A parallel stream is executed by different threads, running on multiple CPU cores in a computer.
+	-> A sequential stream is executed in a single thread running on one CPU core.
+
+8. Runnable vs callable
+	-> The Callable interface is similar to Runnable,
+	 in that both are designed for classes whose instances are potentially executed by another thread. 
+	 A Runnable, however, does not return a result and cannot throw a checked exception
+
+9. wait till all threads completes task
+	-> executor servcie call below method
+	ExecutorService es = Executors.newCachedThreadPool();
+	for(int i=0;i<5;i++)
+   		es.execute(new Runnable() { /*  your task */ });
+		es.shutdown();
+	boolean finished = es.awaitTermination(1, TimeUnit.MINUTES);
+
+10. write program anagram of string in same set
+	// expected [[cat, tac, act], [dog, god]]
+        String wordArr[] = {"cat", "dog", "tac", "god", "act"};
+
+11.what is architecture of JVM
+	
+	loading classes->[class Loader subsystem] bootstrap class loader, application class loader
+				||
+				||	
+				--> JVM memory(method are , heap area, stack area, PC registers, native stack)
+					||
+					|| run time access 
+						--> Execution engine(Interpreter-> convert code to byte code,
+							> JIT compiler
+							> GC( garbage collector, remove the objects from memory)	
+							||
+							|| 
+							   -->native libray and interface
+	> method area- method data
+	> heap area- object data, heap size can be fixed or dynamic based on sys configuration.
+	> stack area- for each thread 1 stack area will be allocated.
+
+12.Some of the important Java 8 features are;
+	forEach() method in Iterable interface.
+	default and static methods in Interfaces.
+	Functional Interfaces and Lambda Expressions.
+	Java Stream API for Bulk Data Operations on Collections.
+	Java Time API.
+	Collection API improvements.
+	Concurrency API improvements.
+	Java IO improvements.
+
+13. What is lambda expression in Java with example?
+	anonymous method, a short block of code which takes in parameters and returns a value.
+
+
+15. What is functional interface and advantages in Java?
+	Functional Interfaces introduced in Java 8 allow us to use a lambda expression to initiate the interface's method
+	and avoid using lengthy codes for the anonymous class implementation.
+ 	Various built-in interfaces were declared with @FunctionalInterface annotation and made functional from Java 8. 
+	They are of 4 types, Function, Consumer, Predicate, and Supplier.
+
+16.what is stream API
+	Stream API is used to process collections of objects. A stream is a sequence of objects that supports various methods 
+	which can be pipelined to produce the desired result.
+
+17. what is optional class in java 8
+	Optional is a container object which may or may not contain a non-null value.
+	If a value is present, isPresent() will return true and get() will return the value.
+
+18. What is the difference between an interface with default method and an abstract class?
+	an interface cannot have state, whereas the abstract class can have state with instance variables.
+	> state - variables
+	>behaviour - methods
+
+19. What is thread join in Java?
+	Join method in Java allows one thread to wait until another thread completes its execution.
+
+20. fail fast and fail safe in java
+	this is collection iteration related
+	The Fail-Fast system terminates the operation as-fast-as-possible that are exposing failures and stop the entire operation. 
+	Whereas, Fail-Safe system doesn't terminate the operation that are exposing failures.
+	 The Fail-safe system tries to avoid raising Failures as much as possible.
+	> fial fast - list, map, linkedlist
+	> fil safe - Concurrenthasmap - allow modification during collection iteration.
+
+21.how arraylist implemented
+	-> Object[] - object array
+
+22. how linkedlist implemented
+	-> [previous node , object, next node]
+	create a node class as below
+
+	private static class Node<E> {
+        E item;
+        Node<E> next;
+        Node<E> prev;
+
+     
+
+23. how hashmap implemented
+
+	key-> array
+	value--> Linkedlist
+
+ static class Node<K,V> implements Map.Entry<K,V> {
+        final int hash;
+        final K key;
+        V value;
+        Node<K,V> next;
+
+private static class Node<E> {
+        E item;
+        Node<E> next;
+        Node<E> prev;
+
+23.how hasmap works
+
+	-> bucketing concept 
+
+24. functional programing
+	-> sequential execution and passing result to next iteration
+
+25. difference between comparator and comparable
+	-> using comparable we can sort based on single element of object , id or name or salary
+	-> using comparator we can sort based on multiple elements of object , id or name or salary
+
+42. collections.sort() implemented logic?
+
+	this logic uses Arrays.sort method internally.
+	and Arrays.sort implemented based on merge sort
+
+43. Quick Sort vs Merge Sort?
+
+	Quick Sort:
+		Quick sort is an internal algorithm which is based on divide and conquer strategy
+		One left partition contains all those elements that are smaller than the pivot and one right partition contains all those 
+		elements which are greater than the key element.
+		Time complexity -best o(nlogn) but varies worest o(n2).
+
+	Merge sort:
+		Merge sort is an external algorithm and based on divide and conquer strategy. In this:
+		The elements are split into two sub-arrays (n/2) again and again until only one element is left.
+		Merge sort uses additional storage for sorting the auxiliary array.
+		Merge sort uses three arrays where two are used for storing each half, 
+		and the third external one is used to store the final sorted list by merging other two and each array is then sorted recursively.
+	Time complexity always -o(nlogn)
+
+44. Why pointers are not used in Java interview questions?
+	So overall Java doesn't have pointers (in the C/C++ sense) because it doesn't need them for general purpose OOP programming. 
+	Java do not use pointers because using pointer the memory area can be directly accessed, which is a security issue.
+
+45. what is JIT compiler??
+
+	
+	Just In compiler-> IT is a part of the JVM that optimizes the performance of the application.
+		javac(jdk)	byte code
+	.java-----------> .class--------------> loding into JVM
+		class loader will load byte code to memory locations.
+
+46. class meta space storage?
+
+permgen space
+
+47. map vs flatmap?
+
+map -> transformation the stream of data
+flat map-> transformation the stream of data and flatening aswell.
+
+49. volatile keyword java?
+we can apply to varibles only
+it will resolve the visbility problem in multithreading.
+if you apply volatile the vairlabe value reflects in memory imediately and avoid data inconsistency.
+
+50.Spring Boot DevTools?
+
+if the the this depency in pom.xml
+
+<dependency>  
+<groupId>org.springframework.boot</groupId>  
+<artifactId>spring-boot-devtools</artifactId>  
+<scope>runtime<scope >  
+</dependency>  
+
+provides Automatic Restart the springboot application and improve the developement speed
+
+51.call by value and call by reference?
+
+	
+		

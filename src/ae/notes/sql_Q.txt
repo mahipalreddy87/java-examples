@@ -1,0 +1,23 @@
+1. Write an SQL query to delete all the duplicate emails, keeping only one unique email with the smallest Id.
+
+	Person table: Explanation: john@example.com is repeated two times. We keep the row with the smallest Id = 1.
++----+------------------+
+| Id | Email            |
++----+------------------+
+| 1  | john@example.com |
+| 2  | bob@example.com  |
+| 3  | john@example.com |
+
+DELETE from Person where Id  not in
+(select id from (select min(Id) as Id 
+                            from Person group by Email ) as p)
+
+
+
+2. Example: Using the same 'employees' table, let's calculate the average salary of each department using the AVG function:
+
+𝚂𝙴𝙻𝙴𝙲𝚃 𝚍𝚎𝚙𝚊𝚛𝚝𝚖𝚎𝚗𝚝, 𝙰𝚅𝙶(𝚜𝚊𝚕𝚊𝚛𝚢) 𝙾𝚅𝙴𝚁 (𝙿𝙰𝚁𝚃𝙸𝚃𝙸𝙾𝙽 𝙱𝚈 𝚍𝚎𝚙𝚊𝚛𝚝𝚖𝚎𝚗𝚝) 𝙰𝚂 𝚊𝚟𝚐_𝚜𝚊𝚕𝚊𝚛𝚢
+𝙵𝚁𝙾𝙼 𝚎𝚖𝚙𝚕𝚘𝚢𝚎𝚎𝚜;
+
+3. nth salary from emloyee 
+	--> select * from(select ename, sal, dense_rank() over(order by sal desc)r from Employee) where r=&n;

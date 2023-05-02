@@ -1,0 +1,65 @@
+
+<=======MongoDB ==========>
+MongoDB is a document database. It stores data in a type of JSON format called BSON.
+
+1. Is MongoDB faster than relational database?
+	MongoDB is almost 100 times faster than traditional database system like RDBMS which is slower in comparison with the NoSQL databases. 
+	There is no support for complex joins in MongoDB but RDBMS supports complex joins which can be difficult to understand and take too much 
+	time to execute.
+
+=======>Create Collection
+ 2 ways:
+	1. db.createCollection("posts");
+	2. db.posts.insertOne(object); // This will create the "posts" collection if it does not already exist.
+
+========>insert Documents
+ 2 ways:
+	1. db.posts.insertOne(json obj);
+	2. db.posts.insertMany(json obj);
+
+=========> Find Documents
+	There are 2 methods to find and select data from a MongoDB collection, find() and findOne().
+	1. db.posts.find()
+	2. db.posts.findOne()
+
+	eg: 
+	   db.posts.find( {category: "News"} )   // query pass the object key and eqauls "news" retrun all documents category contain 'News'
+
+=========> Update Documents
+	To update an existing document we can use the updateOne() or updateMany() methods.
+	1. db.posts.updateOne()
+	2. db.posts.updateMany()
+
+	eg: 
+	   db.posts.updateOne( { title: "Post Title 1" }, { $set: { likes: 2 } } ) 
+		// this will find the documents where title is "post title 1" and update the likes value to 2
+
+	Insert if not found
+		If you would like to insert the document if it is not found, you can use the upsert option.
+ 	{ upsert: true }	
+
+=========> Delete Documents
+	   We can delete documents by using the methods deleteOne() or deleteMany().
+	1. db.posts.deleteOne()
+	2. db.posts.deleteMany()
+
+	eg: db.posts.deleteOne({ title: "Post Title 5" })  // delete te first match document title as 'post title 5'
+
+=========> springboot
+
+
+22.MongoDB
+
+	add annotation in main class @EnableMongoRepositories
+	extends MongoRepository in repository class
+	create bean 
+	@Autowired
+	MongoTemplate
+
+	queries use
+	mongoTemplate.findAll()
+
+	Query query = new Query();
+        query.addCriteria(Criteria.where("firstName").is(firstName));
+        return new ArrayList<>(mongoTemplate.find(query, Employee.class));
+	

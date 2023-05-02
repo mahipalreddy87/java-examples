@@ -1,0 +1,12 @@
+1. what is dpendency injection?
+ DI is a design pattern, where object supplies the dependecies of the other objects.
+ transferring the task of creating the object to someone else and directly using the dependency is called dependency injection.
+
+2. bean scopes
+`1. singleton-- IOc contain will create single instance
+ 2. prototype- IOc contain will create multiple instances
+ 3. request
+ 4. session
+5. global session
+
+3.

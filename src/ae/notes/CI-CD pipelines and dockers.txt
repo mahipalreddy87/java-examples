@@ -1,0 +1,80 @@
+redis-> inmemry database
+
+1. why docker?
+	easy to install and run software with out worrying about setup and dependencies
+	run software isolation without having side effects  , depencies version conflitcs
+
+2. what is docker?
+	Docker is a set of platform as a service (PaaS) products that use OS-level virtualization 
+	to deliver software in packages called containers.
+
+
+3. docker image?
+
+	docker image = combination of file system snapshot + startup command
+	
+	FS snapshot - redis, java8
+image==>
+	command - run redis
+
+4. Docker container?
+	containers virtualize the operating system and run anywhere, 
+	from a private data center to the public cloud or even on a developer's personal laptop
+	Containers are packages of software that contain all of the necessary elements to run in any environment.
+
+
+5. docker commands?
+
+docker build
+> Usage: docker build <path to docker file>
+
+>This command is used to build an image from a specified docker file
+
+docker run
+	Usage: docker run -it -d <image name>
+
+	This command is used to create a container from an image
+
+
+docker ps
+>This command is used to list the running containers
+
+docker images
+> This command lists all the locally stored docker images
+docker rm
+> Usage: docker rm <container id>
+This command is used to delete a stopped container
+
+docker rmi
+
+
+
+docker –version
+docker pull
+docker ps -a
+
+docker exec-> it will give shell access
+docker stop
+docker kill
+docker commit
+docker login
+docker push
+
+====>sample docker file java:
+
+#base image
+FROM openjdk:8-jdk-alpine
+
+#install dependiceis
+MAINTAINER baeldung.com
+
+# copy the jar to docker container path
+COPY target/docker-message-server-1.0.0.jar message-server-1.0.0.jar
+
+#startup command 
+ENTRYPOINT ["java","-jar","/message-server-1.0.0.jar"]
+
+
+=======port mapping
+docker run -p 8080:8080 imag
+

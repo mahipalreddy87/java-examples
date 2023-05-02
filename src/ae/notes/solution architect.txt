@@ -1,0 +1,163 @@
+1 what is scalability and elasticity and resilince?
+	scalability-> the ability to increase or decrease IT resources as needed to meet changing demand
+
+ 	Elasticity-> is the ability to fit the resources needed to cope with loads dynamically usually in relation to scale out
+	Resiliency-> is the ability of your system to react to failure and still remain functional. 
+			It's not about avoiding failure, but accepting failure and constructing your cloud-native services to respond to it
+	Resilience requires planning at all levels of your architecture. 
+	It influences how you lay out your infrastructure and network and how you design your app and data storage. 
+
+2. what are fallback and callback? 	
+
+	>A fallback is code that gets executed when other code fails for some reason, e.g. when a validation fails or a database can't be reached.
+	>A callback is a function that gets attached to a computation or to a network-call and should be called upon completion.
+
+3. rest vs SOAP  ?
+
+		soap                                 			 rest
+		statless bydefault but possible 			statless 				
+state		to make statefull
+	
+		API calls can not be cached				API calls can be cached
+
+security	high security( WS secutity with SSL support)		less secure compare with SOAP
+		built in ACID compilance
+
+messgae format		only xml based 					text, json, xml, ymal,, etc.
+
+transder protocol	HTTP, UDP,SMTP, and other 				HTTP
+
+supported         financial , enterprise, distruited, payment gateway		pubilc APi, web services mobile services, social service
+			applications
+
+
+4. 2 phase commit vs saga?
+
+	2PC works as a single commit and aims to perform ACID transactions on distributed systems. It is used wherever strong consistency is important. 
+	2 phases:
+		> prepare
+		> commit 
+	eg:
+		order service--> order DB
+		payment service--> payment DB
+	
+coodinator-> 
+ phase 1 : prepare for changes , ervey MS are ready and correct
+phase 2 : commit the changes
+
+	 On the other hand, SAGA works sequentially, not as a single commit. Each operation gets committed before the subsequent one, 
+		and this makes the data eventually consistent.
+
+5. how to handle distributed transaction in microservices?
+
+	One of the important participants in a distributed transaction is the transaction coordinator.
+	 The distributed transaction consists of two steps: Prepare phase — during this phase, 
+	all participants of the transaction prepare for commit and notify the coordinator that they are ready to complete the transaction
+
+6. what is saga design pattern?
+
+7. list feautures of spring security?
+
+	LDAP (Lightweight Directory Access Protocol)
+	Single sign-on
+	JAAS (Java Authentication and Authorization Service) LoginModule
+	Basic Access Authentication
+	Digest Access Authentication
+	Remember-me
+	Web Form Authentication
+	Authorization
+	Software Localization
+	HTTP Authorization
+	Modernized Password Encoding
+	OAuth 2.0 Login
+	
+
+8. Spring Boot Features?
+
+	Web Development
+	SpringApplication
+	Application events and listeners
+	Admin features
+	Externalized Configuration
+	Properties Files
+	YAML Support
+	Type-safe Configuration
+	Logging
+	Security
+
+9. What is application vulnerability scanning?
+
+
+	Web Application Vulnerability Scanners are automated tools that scan web applications, normally from the outside, 
+	to look for security vulnerabilities such as Cross-site scripting,
+	SQL Injection, Command Injection, Path Traversal and insecure server configuration.10. How do I scan API for vulnerabilities?
+	
+10. How do I scan API for vulnerabilities?
+
+
+
+11. What are the different application integration styles?
+
+	1 Shared database- where multiple applications share the same database.
+	2 Batch file transfers-  data from one application will be copied into another application’s database via an over-night or regular interval batch jobs with an ETL 
+	3 Invoking Remote Procedure Calls  - webservices, REST, GraphQL, gRPC, and SOAP
+	4 Messaging (i.e. events driven) via MOM-- his is also an inter-process communication whereby exchanging messages asynchronously over a message oriented middleware (MOM)
+				 like Apache Kafka, Websphere MQ, Rabbit MQ, etc.
+
+12. load test and performance test tools?
+	postman API testing
+	Jmeter
+
+
+13. What are the 3 C in microservices?
+
+componentize  -
+collaborate -
+connect -
+
+14. types of microservices?
+
+	Stateless microservices.
+	Stateful microservices.
+
+
+
+
+1. What are the 3 C’s of microservices?
+The 3 C’s of microservices are componentize, collaborate, and connect.
+
+2. How many endpoints are in a microservice?
+Depending on different cases, there might be one endpoint in microservices.
+
+3. What are the top 3 most essential aspects of SaaS?
+SaaS has multiple aspects, but the three most important ones are scalability, enhanced security, and cost-effectiveness.
+
+===============================================================================================================================================
+
+Interviewers ask open-ended questions like:
+
+1. Can you describe the architecture of the application you were recently involved in? or Can you describe the baseline architecture of your recent application?
+
+[Hint: Tiers, Layers, Source/Target Systems, Integration Styles, Protocols used HTTPS/TCP/SOAP/Proprietary, Data exchange formats e.g. JSON/XML/Proprietary, Synchronous/Asynchronous, request-response Vs. fire-and-forget, non-blocking I/O, reactive programming, SQL Vs NoSQL, etc.]
+
+2) What are your most proud of achievements? What were your involvements?
+
+[Hint: Designing a mission critical system that handles 250+ concurrent requests, Designing a near real-time system with low latency response times, etc ]
+
+3) How do you keep your knowledge up to date?
+
+[Hint: Books you read, Blogs you follow, GitHub projects you developed, articles you wrote, your blog, open-source contributions, and other online presence.]
+
+4) Can you describe the non-functional requirements that you addressed in your last project?
+
+[Hint: Capacity planning, security, scalability, maintainability, auditing/logging, archival strategies, choice of integration strategies, choice of tools & frameworks, devising test strategies like performance testing, cross browser compatibility testing, penetration testing, etc, disaster recovery plan, coding standards, and so on. ]
+
+5) How do you evaluate the code quality of others?
+
+6) Technical questions on design approaches, alternatives, pros/cons, and trade-offs. Often no right or wrong answers, but your technical know-how and reasoning skills will be under scrutiny.
+7) What architectural documentations did you produce?
+
+[Hint: Baseline architectural diagrams & patterns, naming standards & process guides, non-functional requirements guide, capacity planning & infrastructure requirements document, etc. ]
+
+Expect drill down questions based on the answers you provide. These questions can reveal a lot about your passion, enthusiasm, attitude, communication skills, problem solving skills and technical strengths. As an architect you need to bridge cross functional teams (E.g. developers, testers, business analysts, stake holders, support & operational staffs, ), and you need to be able to communicate at different levels both technically & non-technically.
+

@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# Author : Zara Ali
+# Copyright (c) Tutorialspoint.com
+# Script follows here:
+
+echo "What is your name?"
+read PERSON
+echo "Hello, $PERSON"
+
+
+-------
+
+#!/bin/sh
+
+NAME="Zara Ali"
+echo $NAME
+
+
+-----------
+
+editors 
+vi edito
+nano editor
+
+nano filename -> open nano editor
+
+-------------------------
+to run shell shell scipt command as below
+> ./run.sh
+
+
+
+----------------

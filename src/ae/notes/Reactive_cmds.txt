@@ -1,0 +1,24 @@
+--> node and visual studio required
+>install node and npm
+--> create project 
+go to cmd 
+>npx create-reactive-app projectname
+
+it will download all dependencies then go to project directory
+
+------------dispaly below
+ npm start
+    Starts the development server.
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+> then  start the server type below cmd
+>> npm start
