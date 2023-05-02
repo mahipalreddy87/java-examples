@@ -34,8 +34,7 @@ public class StremDemo {
         // list group by employee list , related employeeList
         Map<String, List<Employee>> list = employeeList.stream().collect(Collectors.groupingByConcurrent(e->e.department));
         System.out.println(list.entrySet());
-
-
+       List<Double> sal= employeeList.stream().map(e->e.getSalary()- (e.getSalary()*0.30)).collect(Collectors.toList());
         //sort the employee list by salary
         employeeList.stream().sorted(Comparator.comparingDouble(Employee::getSalary)).collect(Collectors.toList());
 
