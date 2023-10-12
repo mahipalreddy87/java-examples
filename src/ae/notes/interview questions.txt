@@ -276,5 +276,15 @@ provides Automatic Restart the springboot application and improve the developeme
 
 51.call by value and call by reference?
 
-	
+53.heap dump and thread dump ?
+
+heap dump -> we can anlyze the heap usage the application.
+tools:
+we can genrate the heapdump file
+>jmap (jdk proided, in jdk/bin)
+>>jvisualVM (jdk proided, in jdk/bin)
+
+heapdump analyze tools:
+JMAT-eclipse provided.(we can identify the memory lekages)
+
 		
