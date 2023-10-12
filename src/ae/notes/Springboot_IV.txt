@@ -250,7 +250,7 @@ we can change the scope of te bean by using scope
 =========Spring security==========================
 
 ways:
-1. implement ssl in API leveland make urls as Https. (apply Https URLs)
+1. implement ssl in API level and make urls as Https. (apply Https URLs)
 
  add ssl  config
 server.port=8443

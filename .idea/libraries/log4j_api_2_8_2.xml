@@ -1,9 +1,40 @@
 <component name="libraryTable">
   <library name="log4j-api-2.8.2">
-    <CLASSES>
-      <root url="jar://$USER_HOME$/OneDrive/Desktop/log4j-api-2.8.2.jar!/" />
-    </CLASSES>
+    <CLASSES />
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/demo/applets/ArcTest" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/demo/applets/BarChart" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/demo/applets/Blink" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/demo/applets/CardTest" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/demo/applets/Clock" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/demo/applets/DitherTest" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/demo/applets/DrawTest" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/demo/applets/Fractal" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/demo/applets/GraphicsTest" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/demo/applets/MoleculeViewer" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/demo/applets/NervousText" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/demo/applets/SimpleGraph" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/demo/applets/SortDemo" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/demo/applets/SpreadSheet" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/demo/applets/WireFrame" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/demo/nio/zipfs" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/sample/annotations/DependencyChecker/PluginChecker/src" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/sample/annotations/DependencyChecker/Plugins/src" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/sample/annotations/Validator/src" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/sample/forkjoin/mergesort" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/sample/jmx/jmx-scandir/src" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/sample/jmx/jmx-scandir/test" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/sample/lambda/BulkDataOperations/src" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/sample/lambda/DefaultMethods" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/sample/nio/chatserver" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/sample/nio/file" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/sample/nio/multicast" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/sample/nio/server" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/sample/scripting/scriptpad/src" />
+      <root url="file://$PROJECT_DIR$/../../softwares/jdk/sample/try-with-resources/src" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../../softwares/jdk" recursive="false" type="SOURCES" />
   </library>
 </component>

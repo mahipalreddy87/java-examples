@@ -4,7 +4,9 @@ import java.util.Arrays;
 
 public class Palindrome {
     public static void main(String[] args) {
-        System.out.println(palindrome("aaabaa"));
+        while(true) {
+            System.out.println(palindrome("aaabaa"));
+        }
     }
 
     private static boolean palindrome(String s) {

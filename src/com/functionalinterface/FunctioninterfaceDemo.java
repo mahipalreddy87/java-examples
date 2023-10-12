@@ -1,6 +1,7 @@
 package com.functionalinterface;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.function.Consumer;
@@ -29,7 +30,7 @@ public class FunctioninterfaceDemo {
         Supplier<Double> retrunDouble = ()->Math.random();
         System.out.println(retrunDouble.get());
 
-        Supplier<List<Person>> listSupplier =()->List.of(new Person("mahipal"),new Person("reddy"));
+        Supplier<List<Person>> listSupplier =()-> Arrays.asList(new Person("mahipal"),new Person("reddy"));
 
 
     }

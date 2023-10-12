@@ -5,6 +5,8 @@ public class StrategyPatternDemo {
         /*
         Strategy pattern is used when we have multiple algorithm
         for a specific task and client decides the actual implementation to be used at runtime.
+
+        in CRMGW exitcharge caluclator service used this pattern.
          */
         Context context = new Context(new OperationAdd());
         System.out.println("10 + 5 = " + context.executeStrategy(10, 5));
